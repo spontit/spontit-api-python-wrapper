@@ -78,18 +78,12 @@ class SpontitResource:
     def push(self,
              call_to_action,
              link=None,
-             to_topic_ids=None,
-             to_user_ids=None,
-             to_emails=None,
-             to_phone_numbers=None):
+             to_topic_ids=None):
         """
 
         :param call_to_action:
         :param link: [OPTIONAL]
         :param to_topic_ids: [OPTIONAL]
-        :param to_user_ids: [OPTIONAL]
-        :param to_emails: [OPTIONAL] detail formatting
-        :param to_phone_numbers: [OPTIONAL] detail formatting
         :return:
         """
         # Construct the payload.
@@ -113,14 +107,6 @@ class SpontitResource:
             if type(to_topic_ids) is not list:
                 raise Exception("The list of topic IDs passed must be a set or a list.")
             payload["to_topic_ids"] = to_topic_ids
-
-        # If user IDs exist, type check and add to payload.
-        if to_user_ids is not None:
-            if type(to_user_ids) is set:
-                to_user_ids = list(to_user_ids)
-            if type(to_user_ids) is not list:
-                raise Exception("The list of user IDs passed must be a set or a list.")
-            payload["to_user_ids"] = to_user_ids
 
         # Send the put request and return the content.
         return util.put_request(payload)
