@@ -1,5 +1,5 @@
 # SPONTIT
-## Send push notifications without your own app. &#U+1F44A;
+## Send push notifications without your own app. :punch:
 Traditionally, only applications on the iOS platform can send push notifications. Using the Spontit API and Spontit app/webapp, you can send your own push notifications programmatically to Android, iOS, and Desktop devices (without touching Swift, Objective-C, Java, XCode, Android Studio, the App Store approval process...).
 
 
