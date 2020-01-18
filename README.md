@@ -52,14 +52,14 @@ Once you have made an account, generate a secret key <a href="https://spontit.co
 
 You can change your user ID, first name, and last name at any time <a href="https://www.spontit.com/change_names">here</a>.
 <a align="center">
-    <img src="https://github.com/joshwolff1/spontit_api/raw/master/images/main_channel_push.png"> 
+    <img src="https://github.com/joshwolff1/spontit_api/raw/master/images/main_channel_push.png" /> 
 </a>
 
 Above we see a push notification sent to a main channel. Here, "Josh Wolff" is the first and last name of the user. The call to action is the displayed text. The image shown is the personal profile picture of the user. (You can change your profile image on the homepage of the website or on the iPhone app in the sidebar.) If the user opens the notification, they can open a link attached, if any. If they have an iPhone, they can forward the notification and share it through several other mediums.
 
-<a align="center">
-    <img src="https://github.com/joshwolff1/spontit_api/raw/master/images/topic_push.png"> 
-</a>
+<center>
+    <img src="https://github.com/joshwolff1/spontit_api/raw/master/images/topic_push.png" /> 
+</center>
 
 Above we see a push notification to a topic. The user above could be managing this topic, but as you can see, it looks like its own account. "Dem 2020 Polls" is the display name, the non-bold text is the call to action, and the image is the image set for the topic. Currently, we only support setting images topic profile images on the iOS app. To set an image, go to "Your Topics" and click the camera icon beside the respective topic.
 #### Send Your First Push Notification :calling:
