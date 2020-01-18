@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="527ee34c-5f7a-4426-a51e-0343dc742723" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/images/main_channel_push.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/main_channel_push.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/topic_push.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/topic_push.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +16,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="242">
-                <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+              <first_editor relative-caret-position="297">
+                <caret line="61" column="74" lean-forward="true" selection-start-line="61" selection-start-column="74" selection-end-line="61" selection-end-column="74" />
               </first_editor>
               <second_editor />
             </state>
@@ -191,6 +190,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -244,8 +244,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="242">
-            <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+          <first_editor relative-caret-position="297">
+            <caret line="61" column="74" lean-forward="true" selection-start-line="61" selection-start-column="74" selection-end-line="61" selection-end-column="74" />
           </first_editor>
           <second_editor />
         </state>
