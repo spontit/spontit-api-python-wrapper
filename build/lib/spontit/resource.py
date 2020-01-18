@@ -35,7 +35,6 @@ class SpontitResource:
         """
         if type(method_str) is SpontitResource.FunctionStrings:
             method_str = method_str.value
-        print(type(method_str))
         assert type(method_str) is str
         return {
             'user_id': self.user_id,
