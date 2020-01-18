@@ -1,19 +1,19 @@
 # SPONTIT
-## Send push notifications without your own app.
+## Send push notifications without your own app. &#U+1F44A;
 Traditionally, only applications on the iOS platform can send push notifications. Using the Spontit API and Spontit app/webapp, you can send your own push notifications programmatically to Android, iOS, and Desktop devices (without touching Swift, Objective-C, Java, XCode, Android Studio, the App Store approval process...).
 
 
 ## TL;DR
 
-1) Sign up at <a href="https://www.spontit.com">spontit.com</a> (you might need to click "Take me to the Desktop version."). Note down your username. It should be displayed in the top right.
-2) Get a secret key at <a href="https://www.spontit.com/secret_keys">spontit.com/secret_keys<a>. 
+1) Sign up at <a href="https://www.spontit.com" target="_blank">spontit.com</a> (you might need to click "Take me to the Desktop version."). Note down your username. It should be displayed in the top right.
+2) Get a secret key at <a href="https://www.spontit.com/secret_keys" target="_blank">spontit.com/secret_keys<a>. 
 3) Get the iPhone app or Android app. Sign in and allow notifications.
 4) `pip install spontit`
 5) `from spontit import SpontitResource`
 6) `resource = SpontitResource(my_username, my_secret_key)`
 7) `response = resource.push("Hello!")`
 8) You can customize the image of this notification on the website or iPhone app. You can push web content and can push to different topics (topic = subchannel). To push to others, have them follow your respective account (e.g. at <a href="https://spontit.com">spontit.com/my_username</a>) and/or topic. Currently, we only support topic creation on the iPhone app.
-9) We are constantly working on expanding the functionality of Spontit. We GREATLY appreciate your input - feel free to <a href="https://github.com/joshwolff1/spontit_api/issues/new">add a feature request</a> on our Github.
+9) We are constantly working on expanding the functionality of Spontit. We GREATLY appreciate your input - feel free to <a href="https://github.com/joshwolff1/spontit_api/issues/new" target="_blank">add a feature request</a> on our Github.
 
 ### About
 
@@ -33,20 +33,20 @@ A notification pushed to a topic has a separate appearance than one pushed to a 
 
 #### Creating Topics
 
-Currently, creating topics is only supported through the GUI on the iOS <a href="https://itunes.apple.com/us/app/spontit/id1448318683">Spontit app</a>. We intend to expand this functionality to the website and the API.
+Currently, creating topics is only supported through the GUI on the iOS <a href="https://itunes.apple.com/us/app/spontit/id1448318683" target="_blank">Spontit app</a>. We intend to expand this functionality to the website and the API.
 
 Once you make a topic, you are NOT able to change its display name. This will likely NOT change for quite some time. Please keep this in mind when creating topics.
 
 
 ### Getting Started
 
-For complete documentation listing the functions available, please see <a>here</a>.
+For complete documentation listing the functions available, please see <a target="_blank">here</a>.
 
 #### Make an Account
-First, go to <a href="https://www.spontit.com">spontit.com</a> or download the <a href="https://itunes.apple.com/us/app/spontit/id1448318683">Spontit app</a>.
+First, go to <a href="https://www.spontit.com" target="_blank">spontit.com</a> or download the <a href="https://itunes.apple.com/us/app/spontit/id1448318683" target="_blank">Spontit app</a>.
 Create an account and get your user ID. To see your user ID in the app, tap on the hamburger button. To see your user ID on the website, look at the top of the screen.
 
-You can change your user ID at any time <a href="https://www.spontit.com/change_names">here</a>.
+You can change your user ID at any time <a href="https://www.spontit.com/change_names" target="_blank">here</a>.
 
 #### Generate a Secret Key
 Once you have made an account, generate a secret key <a href="https://spontit.com/secret_key">here</a>. You might have to re-authenticate.
@@ -83,25 +83,6 @@ To create a topic, see "Creating Topics" above. To get a mapping of topic IDs to
 To specify specific content on your website, do the following:
 
 `response = spontit_resource.push("My First Push Notification", link="https://www.mywebsite.com", to_topic_ids=["mytopic"])`
-
-#### Send to a Push Notification to Specific Users
-
-You can send a push notification to specific users by specifying their Spontit user IDs as such:
-
-`response = spontit_resource.push("My First Push Notification", to_user_ids=["sandra, new_user1212, jose_c"])`
-
-NOTE: Spontit is designed for virality. Every push notification can go out-of-network and be seen by other users if the receiving user(s) shares it.
-
-#### Map User IDs to Your Own Database
-
-You might be asking, "If I know the Spontit user IDs, what good is that?" You might want to send custom notifications to those
-who already have accounts on your platform. If a Spontit user allows you access to their basic contact information (first name, last name, user ID, email, phone number), 
-then you can map this using `spontit_resource.get_follower_to_contact_mapping()` or map it for a specific topic using `spontit_resource.get_follower_to_contact_mapping(for_topic_id="mytopic")`.
-
-This will return a mapping of each user ID that follows your or the specified topic to their contact information, provided they specifically give you access to this mapping. If they do not, the `None` type will appear in place of their contact information.
-
-You always have access to their first and last name, as this is public on Spontit. However, the default first and last name for many users is "Anonymous Stork" or "Anonymous Lemur." They must specifically change this or initially provide their first and last name by signing in with Google/Email.
-
 
 ### Limitations
 
