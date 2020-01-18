@@ -1,1 +1,1 @@
-spontit_pkg
+spontit

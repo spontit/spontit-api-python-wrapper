@@ -3,14 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="527ee34c-5f7a-4426-a51e-0343dc742723" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib/spontit_pkg/resource.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/spontit_pkg/resource.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/spontit-0.0.1-py3-none-any.whl" beforeDir="false" afterPath="$PROJECT_DIR$/dist/spontit-0.0.1-py3-none-any.whl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/spontit-0.0.1.tar.gz" beforeDir="false" afterPath="$PROJECT_DIR$/dist/spontit-0.0.1.tar.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/spontit-0.0.1-py3-none-any.whl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/spontit-0.0.1.tar.gz" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spontit.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/spontit.egg-info/PKG-INFO" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spontit_pkg/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spontit_pkg/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/spontit_pkg/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spontit_pkg/resource.py" beforeDir="false" afterPath="$PROJECT_DIR$/spontit_pkg/resource.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spontit.egg-info/SOURCES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/spontit.egg-info/SOURCES.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spontit.egg-info/top_level.txt" beforeDir="false" afterPath="$PROJECT_DIR$/spontit.egg-info/top_level.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spontit/resource.py" beforeDir="false" afterPath="$PROJECT_DIR$/spontit/resource.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,8 +24,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="191">
-                <caret line="15" column="143" selection-start-line="15" selection-start-column="137" selection-end-line="15" selection-end-column="143" />
+              <first_editor relative-caret-position="75">
+                <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
               </first_editor>
               <second_editor />
             </state>
@@ -33,21 +33,32 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spontit_pkg/__init__.py">
+        <entry file="file://$PROJECT_DIR$/spontit/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spontit_pkg/resource.py">
+        <entry file="file://$PROJECT_DIR$/spontit/resource.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#4#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spontit/util.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret line="11" column="59" lean-forward="true" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -56,8 +67,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="49" lean-forward="true" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
+            <state relative-caret-position="120">
+              <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -90,17 +101,12 @@
         <option value="$PROJECT_DIR$/resource.py" />
         <option value="$PROJECT_DIR$/spontit_package/__init__.py" />
         <option value="$PROJECT_DIR$/spontit_pkg/LICENSE" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/spontit_pkg/resource.py" />
         <option value="$PROJECT_DIR$/spontit_pkg/__init__.py" />
+        <option value="$PROJECT_DIR$/setup.cfg" />
+        <option value="$PROJECT_DIR$/spontit/resource.py" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/setup.py" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
       </list>
     </option>
   </component>
@@ -137,7 +143,7 @@
             <path>
               <item name="spontit_api" type="b2602c69:ProjectViewProjectNode" />
               <item name="spontit_api" type="462c0819:PsiDirectoryNode" />
-              <item name="spontit_pkg" type="462c0819:PsiDirectoryNode" />
+              <item name="spontit" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -241,37 +247,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/setup.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spontit/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spontit/resource.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#4#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spontit/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="191">
-            <caret line="15" column="143" selection-start-line="15" selection-start-column="137" selection-end-line="15" selection-end-column="143" />
+          <first_editor relative-caret-position="75">
+            <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spontit_pkg/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spontit_pkg/resource.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="11" column="59" lean-forward="true" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="49" lean-forward="true" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
+        <state relative-caret-position="120">
+          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
         </state>
       </provider>
     </entry>

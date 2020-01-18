@@ -1,4 +1,4 @@
-# :vibration_mode: SPONTIT :vibration_mode:
+# SPONTIT :vibration_mode:
 ## Send push notifications without your own app. :punch:
 Using the Spontit API and Spontit app/webapp, you can send your own push notifications programmatically to Android, iOS, and Desktop devices. You can send your own in less than 5 minutes. :sunglasses: :trophy: (Without touching Swift, Objective-C, Java, XCode, Android Studio, the App Store approval process... :dizzy_face:).
 
