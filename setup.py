@@ -1,5 +1,7 @@
 import setuptools
 
+# Thank you to https://packaging.python.org/tutorials/packaging-projects/
+
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
