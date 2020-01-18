@@ -52,7 +52,7 @@ Once you have made an account, generate a secret key <a href="https://spontit.co
 
 You can change your user ID, first name, and last name at any time <a href="https://www.spontit.com/change_names">here</a>.
 
-![Push notification sent via the main channel.](images/main_channel_push.png?style=centerme)
+![Push notification sent via the main channel.](images/main_channel_push.png?style=centerme){ align="center" }
 
 Above we see a push notification sent to a main channel. Here, "Josh Wolff" is the first and last name of the user. The call to action is the displayed text. The image shown is the personal profile picture of the user. (You can change your profile image on the homepage of the website or on the iPhone app in the sidebar.) If the user opens the notification, they can open a link attached, if any. If they have an iPhone, they can forward the notification and share it through several other mediums.
 
