@@ -1,9 +1,9 @@
-# SPONTIT
+# SPONTIT :vibration_mode:
 ## Send push notifications without your own app. :punch:
-Traditionally, only applications on the iOS platform can send push notifications. Using the Spontit API and Spontit app/webapp, you can send your own push notifications programmatically to Android, iOS, and Desktop devices (without touching Swift, Objective-C, Java, XCode, Android Studio, the App Store approval process...).
+Traditionally, only applications on the iOS platform can send push notifications. Using the Spontit API and Spontit app/webapp, you can send your own push notifications programmatically to Android, iOS, and Desktop devices. You can send your own in less than 5 minutes. :sunglasses: :trophy: (Without touching Swift, Objective-C, Java, XCode, Android Studio, the App Store approval process... :dizzy_face:).
 
 
-## TL;DR
+## TL;DR :running:
 
 1) Sign up at <a href="https://www.spontit.com" target="_blank">spontit.com</a> (you might need to click "Take me to the Desktop version."). Note down your username. It should be displayed in the top right.
 2) Get a secret key at <a href="https://www.spontit.com/secret_keys" target="_blank">spontit.com/secret_keys<a>. 
@@ -13,7 +13,7 @@ Traditionally, only applications on the iOS platform can send push notifications
 6) `resource = SpontitResource(my_username, my_secret_key)`
 7) `response = resource.push("Hello!")`
 8) You can customize the image of this notification on the website or iPhone app. You can push web content and can push to different topics (topic = subchannel). To push to others, have them follow your respective account (e.g. at <a href="https://spontit.com">spontit.com/my_username</a>) and/or topic. Currently, we only support topic creation on the iPhone app.
-9) We are constantly working on expanding the functionality of Spontit. We GREATLY appreciate your input - feel free to <a href="https://github.com/joshwolff1/spontit_api/issues/new" target="_blank">add a feature request</a> on our Github.
+9) We are constantly working on expanding the functionality of Spontit. We GREATLY appreciate your input - feel free to <a href="https://github.com/joshwolff1/spontit_api/issues/new" target="_blank">add a feature request</a> on our Github. :smiley:
 
 ### About
 
@@ -38,7 +38,7 @@ Currently, creating topics is only supported through the GUI on the iOS <a href=
 Once you make a topic, you are NOT able to change its display name. This will likely NOT change for quite some time. Please keep this in mind when creating topics.
 
 
-### Getting Started
+### Getting Started :white_check_mark:
 
 For complete documentation listing the functions available, please see <a target="_blank">here</a>.
 
@@ -54,7 +54,7 @@ Once you have made an account, generate a secret key <a href="https://spontit.co
 #### Push Notification UI Anatomy
 You can change your user ID, first name, and last name at any time <a href="https://www.spontit.com/change_names">here</a>.
 
-#### Send Your First Push Notification
+#### Send Your First Push Notification :calling:
 
 The Spontit API currently only supports Python 3.7.
 
@@ -97,7 +97,7 @@ Effectively, the limit is one push per second per account-topic combination (e.g
 
 If you exceed the rate limit, we will specify this in the response returned.
 
-#### Development Prioritization
+#### Note on Our Development Priorities
 We prioritize development of the iOS application over the website. If at any time, we describe a feature and it does 
 not seem to be on the website, it might only exist in the iOS application. Please email us at info {at} spontit {dot} io 
 so that we can clarify this to you and other developers.
