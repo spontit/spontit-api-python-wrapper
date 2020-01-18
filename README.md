@@ -5,7 +5,7 @@ Using the Spontit API and Spontit app/webapp, you can send your own push notific
 
 ## TL;DR :running:
 
-1) Sign up at <a href="https://www.spontit.com" target="_blank">spontit.com</a> (you might need to click "Take me to the Desktop version."). Note down your username. It should be displayed in the top right.
+1) Sign up at <a href="#" onclick='window.open("https://www.spontit.com");return false;'>spontit.com</a> (you might need to click "Take me to the Desktop version."). Note down your username. It should be displayed in the top right.
 2) Get a secret key at <a href="https://www.spontit.com/secret_keys" target="_blank">spontit.com/secret_keys<a>. 
 3) Get the iPhone app or Android app. Sign in and allow notifications.
 4) `pip install spontit`
