@@ -3,19 +3,31 @@
 Traditionally, only applications on the iOS platform can send push notifications. Using the Spontit API and Spontit app/webapp, you can send your own push notifications programmatically to Android, iOS, and Desktop devices (without touching Swift, Objective-C, Java, XCode, Android Studio, the App Store approval process...).
 
 
+## TL;DR
+
+1) Sign up at <a href="https://www.spontit.com">spontit.com</a> (you might need to click "Take me to the Desktop version."). Note down your username. It should be displayed in the top right.
+2) Get a secret key at <a href="https://www.spontit.com/secret_keys">spontit.com/secret_keys<a>. 
+3) Get the iPhone app or Android app. Sign in and allow notifications.
+4) `pip install spontit`
+5) `from spontit import SpontitResource`
+6) `resource = SpontitResource(my_username, my_secret_key)`
+7) `response = resource.push("Hello!")`
+8) You can customize the image of this notification on the website or iPhone app. You can push web content and can push to different topics (topic = subchannel). To push to others, have them follow your respective account (e.g. at <a href="https://spontit.com">spontit.com/my_username</a>) and/or topic. Currently, we only support topic creation on the iPhone app.
+9) We are constantly working on expanding the functionality of Spontit. We GREATLY appreciate your input - feel free to <a href="https://github.com/joshwolff1/spontit_api/issues/new">add a feature request</a> on our Github.
+
 ### About
 
 #### What are topics?
-Every user, by definition, is a root account. Each user can create a topic.
+Every user, by definition, is a main channel. Each user can create a topic.
 
-Topics are designed to act separately from your root account. Users can follow
-topics without following your root account. Users can follow your root account without following your topics.
+Topics are designed to act separately from your main channel. Users can follow
+topics without following your main channel. Users can follow your main channel without following your topics.
 
 For example, my account user ID might be "elon_musk," but I might want to push about new SpaceX developments. I could
 push to the topic "spacex" and only those who follow the "spacex" topic would get pushed. 
 
 When you create a topic, you only need to specify the display name. We create a topic ID from this display name. You
-then use this ID to programmatically push to the topic.
+then use this ID to programmatically push to the topic. To get the 
 
 A notification pushed to a topic has a separate appearance than one pushed to a root account (see "Push Notification UI Anatomy").
 

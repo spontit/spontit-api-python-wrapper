@@ -1,0 +1,9 @@
+README.md
+setup.py
+spontit.egg-info/PKG-INFO
+spontit.egg-info/SOURCES.txt
+spontit.egg-info/dependency_links.txt
+spontit.egg-info/top_level.txt
+spontit_pkg/__init__.py
+spontit_pkg/resource.py
+spontit_pkg/util.py
