@@ -45,7 +45,7 @@ Above we see a push notification sent to the main channel. Here, "Josh Wolff" is
     <img src="https://github.com/joshwolff1/spontit_api/raw/master/images/topic_push.png" /> 
 </p>
 
-Above we see a push notification to a channel (separate from the main channel). Josh owns this channel, but as you can see, it looks like its own account. "Dem 2020 Polls" is the display name, the non-bold text is the call to action, and the image is the image set for the channel. Currently, we only support setting images for sub-channels on the iOS app. To set an image, go to the "Create", select the desired channel, and click the camera icon.
+Above we see a push notification to a channel (separate from the main channel). Josh owns this channel, but as you can see, it looks like its own account. "Dem 2020 Polls" is the display name, the non-bold text is the call to action, and the image is the image set for the channel. Currently, we only support setting images for sub-channels on the iOS app. To set an image, go to the "Create" tab, select the desired channel, and click the camera icon.
 
 ### Limitations
 
