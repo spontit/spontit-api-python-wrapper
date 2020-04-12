@@ -237,6 +237,7 @@ class SpontitResource:
             assert type(ios_deep_link) == str
             payload["iOSDeepLink"] = ios_deep_link
 
+        payload["userId"] = self.user_id
         if channel_id is not None:
             assert type(channel_id) == str
             payload["userId"] = channel_id

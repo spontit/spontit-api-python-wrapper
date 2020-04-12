@@ -221,7 +221,7 @@ if __name__ == "__main__":
     print("Simple push example result: " + str(response))
 
     # ...or get right to pushing!
-    response = spontit_src.push("Hello!")
+    response = spontit_src.push("Hello!!!")
     print("Result: " + str(response))
 
     # To see documentation, run:
