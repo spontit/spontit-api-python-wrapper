@@ -12,7 +12,7 @@ Using the Spontit API and Spontit app/webapp, you can send your own push notific
 5) `from spontit import SpontitResource`
 6) `resource = SpontitResource(my_username, my_secret_key)`
 7) `response = resource.push("Hello!")`
-8) Run the command `help(SpontitResource)` for complete documentation.
+8) Run the command `help(SpontitResource)` in Python for complete documentation.
 9) Or try an example! Check out the examples at https://github.com/joshwolff1/spontit_api/blob/master/spontit/examples.py
 10) You can customize the image of the notification on the website or iPhone app by setting the image for the respective channel. Sub-channel image customization is currently only supported on the iPhone app. 
 11) To push to others, have them follow the channel to which you will push (e.g. share <a href="https://spontit.com">spontit.com/my_username</a>). You can see available invite options by calling `print(resource.get_invite_options())`.
@@ -23,7 +23,7 @@ Using the Spontit API and Spontit app/webapp, you can send your own push notific
 #### Make an Account
 
 First, go to <a href="https://www.spontit.com" target="_blank">spontit.com</a> or download the <a href="https://itunes.apple.com/us/app/spontit/id1448318683" target="_blank">Spontit app</a>.
-Create an account and get your user ID. To see your user ID in the app, tap on the hamburger button. To see your user ID on the website, look at the top of the screen.
+Create an account and get your user ID. To see your user ID in the app, tap the "Profile" tab. To see your user ID on the website, look at the top of the screen.
 
 You can change your user ID at any time <a href="https://www.spontit.com/change_names" target="_blank">here</a>.
 

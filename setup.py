@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="spontit",
-    version="1.0.0",
+    version="1.0.1",
     author="Spontit Inc",
     author_email="info@spontit.io",
     description="Send your own mobile push notifications.",
