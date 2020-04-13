@@ -9,17 +9,17 @@ class SpontitResource:
         Use an instance of this class to set the expiration time in the push function.
         """
 
-        def __init__(self, days, minutes, hours):
+        def __init__(self, days, hours, minutes):
             # noinspection PyBroadException
             try:
                 assert type(days) == int
-                assert type(minutes) == int
                 assert type(hours) == int
+                assert type(minutes) == int
             except Exception:
                 raise Exception("Days, minutes, and hours must be formatted as an int.")
             self.days = days
-            self.minutes = minutes
             self.hours = hours
+            self.minutes = minutes
 
         def get_time_stamp_from_schedule(self, schedule_time_stamp):
             """
@@ -154,7 +154,6 @@ class SpontitResource:
         :return: The mapping; or an error if there is one
         """
         channel_data = self.__post_request(self.__get_payload_dict(), endpoint="get_my_channels")
-        print(channel_data)
         if "data" not in channel_data:
             # Error received
             return channel_data
@@ -237,6 +236,7 @@ class SpontitResource:
             assert type(ios_deep_link) == str
             payload["iOSDeepLink"] = ios_deep_link
 
+        payload["userId"] = self.user_id
         if channel_id is not None:
             assert type(channel_id) == str
             payload["userId"] = channel_id

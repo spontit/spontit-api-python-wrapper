@@ -176,9 +176,9 @@ class Examples:
                 return self.__resource.push("Hello!",
                                             channel_id=channel_id_to_push_to)
         return {
-            "errors": {
+            "errors": [{
                 "message": "Channel not found."
-            }
+            }]
         }
 
     def create_new_channel_and_get_invite_options(self):
@@ -200,9 +200,9 @@ class Examples:
             if channel_id_to_invite_to is not None:
                 return self.__resource.get_invite_options(channel_id_to_invite_to)
         return {
-            "errors": {
+            "errors": [{
                 "message": "Channel not found."
-            }
+            }]
         }
 
     def get_invite_options_for_my_main_account(self):
@@ -221,7 +221,7 @@ if __name__ == "__main__":
     print("Simple push example result: " + str(response))
 
     # ...or get right to pushing!
-    response = spontit_src.push("Hello!")
+    response = spontit_src.push("Hello!!!")
     print("Result: " + str(response))
 
     # To see documentation, run:
