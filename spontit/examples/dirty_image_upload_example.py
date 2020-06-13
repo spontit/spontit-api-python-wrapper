@@ -6,10 +6,13 @@ class ImageUploadExample(SpontitResource):
 
     def dirty_channel_profile_image_upload(self, image_path, is_png, channel_name=None):
         """
-        This function explicitly constructs the bytes sent to the server in order to upload a channel profile image.
+        # WARNING: Don't use this method if you are using Python. It will work, but there is a far more intuitive method
+        # in the SpontitResource. Just use spontit_resource.channel_profile_image_upload(...) and feel free to examine
+        # the example in examples.py titled 'create_new_channel_with_profile_image_and_push_to_it'.
 
-        The explicit construction of the multi-part request should make it somewhat easier to develop such a request
-         in another language.
+        # This example illustrates how to construct the byte payload for other languages (i.e. not fully dependent on
+        # the requests library). The explicit construction of the multi-part request should make it somewhat easier to
+        # develop such a request in another language.
 
         :param image_path: the path to the image
         :param is_png: whether or not the image is PNG or JPEG
@@ -68,6 +71,13 @@ class ImageUploadExample(SpontitResource):
 
 
 if __name__ == "__main__":
+
+    # WARNING: Don't use this method if you are using Python. It will work, but there is a far more intuitive method
+    # in the SpontitResource. Just use spontit_resource.channel_profile_image_upload(...) and feel free to examine
+    # the example in examples.py titled 'create_new_channel_with_profile_image_and_push_to_it'.
+
+    # This example illustrates how to construct the byte payload for other languages (i.e. not fully dependent on the
+    # requests library).
 
     img_upload_resource = ImageUploadExample(
         "my_user_id",
