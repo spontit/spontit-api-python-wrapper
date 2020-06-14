@@ -7,7 +7,7 @@ Using the Spontit API and Spontit app/webapp, you can send your own push notific
 
 **Spontit is 100% free! Please star the repo and rate/review the Spontit app in the App Store as well.**
 
-1) Sign up at <a href="https://www.spontit.com" target="_blank">spontit.com</a> (you might need to click "Take me to the Desktop version."). Note down your username. It should be displayed on your <a href="https://spontit.com/profile" target="_blank">profile</a> once you are signed in.
+1) Sign up at <a href="https://www.spontit.com" target="_blank">spontit.com</a> (you might need to click "Take me to the Desktop version"). Note down your username. It should be displayed on your <a href="https://spontit.com/profile" target="_blank">profile</a> once you are signed in.
 2) Get a secret key at <a href="https://www.spontit.com/secret_keys" target="_blank">spontit.com/secret_keys</a>. 
 3) Get the iPhone app or Android app. Sign in and allow notifications.
 4) `pip install spontit --upgrade && pip install requests`
@@ -15,9 +15,9 @@ Using the Spontit API and Spontit app/webapp, you can send your own push notific
 6) `resource = SpontitResource(my_username, my_secret_key)`
 7) `response = resource.push("Hello!")`
 8) Run the command `help(SpontitResource)` in Python for complete documentation.
-9) Or try an example! Check out the examples at https://github.com/joshwolff1/spontit_api/blob/master/spontit/examples.py
-10) You can customize the image of the notification on the website or iPhone app by setting the image for the respective channel. Sub-channel image customization is currently only supported on the iPhone app. 
-11) To push to others, have them follow the channel to which you will push (e.g. share <a href="https://spontit.com">spontit.com/my_username</a>). You can see available invite options by calling `print(resource.get_invite_options())`.
+9) Or try an example! Check out the <a href="https://github.com/spontit/spontit-api-python-wrapper/blob/master/spontit/examples/examples.py">examples</a>.
+10) You can customize the image of the notification on the website, iPhone app, or via the API by setting the image for the respective channel. See the image example titled `create_new_channel_with_profile_image_and_push_to_it` in the <a href="https://github.com/spontit/spontit-api-python-wrapper/blob/master/spontit/examples/examples.py">examples</a>.
+11) To push to others, have them follow the channel to which you will push (e.g. share <a href="https://spontit.com">spontit.com/my_username</a>). You can see available invite options by calling `print(resource.get_channel(...))` and supply the channel name. See the functions titled `create_new_channel_and_get_invite_options` and `get_invite_options_for_my_main_account` in the <a href="https://github.com/spontit/spontit-api-python-wrapper/blob/master/spontit/examples/examples.py">examples</a>.
 12) We are constantly working on expanding the functionality of Spontit. We GREATLY appreciate your input - feel free to <a href="https://github.com/joshwolff1/spontit_api/issues/new" target="_blank">add a feature request</a> on our Github. :smiley:
 
 ### Getting Started :white_check_mark:
