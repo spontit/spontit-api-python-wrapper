@@ -27,7 +27,7 @@ Using the Spontit API and Spontit app/webapp, you can send your own push notific
 First, go to <a href="https://www.spontit.com" target="_blank">spontit.com</a> or download the <a href="https://itunes.apple.com/us/app/spontit/id1448318683" target="_blank">Spontit app</a>.
 Create an account and get your user ID. To see your user ID in the app, tap the "Profile" tab. To see your user ID on the website, look at the top of the screen.
 
-You can change your user ID at any time <a href="https://www.spontit.com/change_names" target="_blank">here</a>.
+You can change your user ID at any time <a href="https://www.spontit.com/profile" target="_blank">here</a>.
 
 #### Generate a Secret Key
 
