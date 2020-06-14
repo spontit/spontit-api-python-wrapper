@@ -35,7 +35,7 @@ Once you have made an account, generate a secret key <a href="https://spontit.co
 
 #### Push Notification UI Anatomy
 
-You can change your user ID and display name at any time <a href="https://www.spontit.com/change_names">here</a>.
+You can change your user ID and display name at any time <a href="https://www.spontit.com/profile">here</a>.
 
 <p align="center">
     <img src="https://github.com/spontit/spontit-api-python-wrapper/raw/master/images/main_channel_push.png" /> 
