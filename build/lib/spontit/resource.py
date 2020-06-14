@@ -1,9 +1,19 @@
-import requests
 import json
 import time
+from enum import Enum
+import requests
 
 
 class SpontitResource:
+
+    __url = "https://api.spontit.com/v3/"
+
+    class RequestMethod(Enum):
+        GET = "GET"
+        POST = "POST"
+        PATCH = "PATCH"
+        DELETE = "DELETE"
+
     class Expiration:
         """
         Use an instance of this class to set the expiration time in the push function.
@@ -31,18 +41,11 @@ class SpontitResource:
             """
             return schedule_time_stamp + self.days * 24 * 60 * 60 + self.hours * 60 * 60 + self.minutes * 60
 
-    ENDPOINTS = {
-        "get_channel_categories": "get_channel_categories",
-        "create_channel": "create_channel",
-        "get_display_name_to_channel_id_mapping": "get_my_topics",
-        "push": "push"
-    }
-
     def __init__(self, user_id, secret_key):
         """
         Initializes the Spontit Resource.
-        :param user_id: Your userId. You can find this on the Profile tab of the iOS Spontit app or in the top left
-        of spontit.com once you log-in.
+        :param user_id: Your userId. You can find this on the Profile tab of the iOS Spontit app or
+        at spontit.com/profile after signing in
         :param secret_key: Your secret key. To create a secret key, go to spontit.com/secret_keys. Sign in / sign up
         and then click "Add Key" after being redirected to the page. If the redirect fails after signing in, re-enter
         spontit.com/secret_keys.
@@ -54,121 +57,192 @@ class SpontitResource:
         self.user_id = user_id
         self.secret_key = secret_key
 
-    def __post_request(self, payload, function_name=None, endpoint=None):
+    def _get_headers(self):
         """
-        Makes a POST request.
-        :param payload: The payload containing the desired query parameters
-        :param function_name: The name of the function that is sending the POST request
-        :param endpoint: The desired endpoint
-        :return:
-        """
-        assert function_name is not None or endpoint is not None
-        if function_name is not None:
-            endpoint = self.ENDPOINTS[function_name]
-        url = "https://api.spontit.com/v2/"
-        r = requests.post(url + endpoint, data=payload, json=payload)
-        json_content = json.loads(r.content)
-        return json_content
-
-    def __get_payload_dict(self):
-        """
-        Constructs a basic payload dictionary for your credentials
-        :return: The payload dictionary
+        Get the headers with the appropriate authentication parameters
+        :return: The headers
         """
         return {
-            'secretUser': self.user_id,
-            'secretKey': self.secret_key
+            'X-UserId': self.user_id,
+            'X-Authorization': self.secret_key
         }
 
-    def get_channel_categories(self):
+    def _request(self, payload, endpoint, request_method, files=None, headers=None):
+        """
+        Makes a POST request.
+        :param payload: the payload containing the parameters
+        :param endpoint: the desired endpoint
+        :param request_method: the method (e.g. POST, GET, PATCH, DELETE)
+        :param files: files to send. only used when changing a profile image
+        :param headers: headers for the request. only specified when changing a profile image
+        :return:
+        """
+        if headers is None:
+            headers = self._get_headers()
+
+        if files is None:
+            r = requests.request(
+                request_method.value,
+                url=self.__url + endpoint,
+                data=payload,
+                headers=headers
+            )
+        else:
+            r = requests.request(
+                request_method.value,
+                url=self.__url + endpoint,
+                data=payload,
+                files=files,
+                headers=headers
+            )
+
+        try:
+            json_content = json.loads(r.content)
+        except json.decoder.JSONDecodeError:
+            return r
+        return json_content
+
+    def get_categories(self):
         """
         Gets a list of categories that you can use when creating a new channel.
-        :return: A list of categories. Each category is a dict with the attributes channelCode and categoryName.
+        :return: a list of categories. each category is a dict with the attributes categoryCode and categoryName.
         """
-        return self.__post_request(self.__get_payload_dict(), self.get_channel_categories.__name__)
+        return self._request(
+            payload={},
+            endpoint="categories",
+            request_method=self.RequestMethod.GET
+        )
 
-    def create_channel(self, display_name, channel_code=99):
+    def create_channel(self, channel_name, category_code=99):
         """
         Creates a new channel. You will then be able to push and invite to this channel separately from your main
         account.
-        :param display_name: The display name of the new channel you want to create.
-        :param channel_code: The channel code that defines the category of your channel. The default is 99. To get a
-        mapping of channel codes to category names, call get_channel_categories.
-        :return:
+        :param channel_name: the name of the new channel you want to create
+        :param category_code: the category code that defines the category of your channel. default is 99. to get a
+        mapping of channel codes to category names, call get_categories
+        :return: the new channel
         """
-        payload = self.__get_payload_dict()
-        assert type(channel_code) is int
-        assert type(display_name) is str
-        payload["displayName"] = display_name
-        payload["channelCode"] = int(channel_code)
-        return self.__post_request(payload, self.create_channel.__name__)
+        assert type(category_code) is int
+        assert type(channel_name) is str
 
-    def get_invite_options(self, channel_id=None):
-        """
-        Gets the invite options for the given channel. Get the channel ID using get_display_name_to_channel_id_mapping.
-        :param channel_id: The ID of the channel that you want invite options for
-        :return: Invite options; or an error, if there is one
-        """
-        if channel_id is None:
-            channel_id = self.user_id
-        assert type(channel_id) is str
+        return self._request(
+            payload={
+                "channelName": channel_name,
+                "categoryCode": category_code
+            },
+            endpoint="channel",
+            request_method=self.RequestMethod.POST
+        )
 
-        options = {
-            "link": "https://spontit.com/" + channel_id
+    def delete_channel(self, channel_name):
+        """
+        Deletes a channel with the specified name
+        :param channel_name: the name of the channel to delete
+        :return: the response of the request
+        """
+        return self._request(
+            payload={
+                "channelName": channel_name
+            },
+            endpoint="channel",
+            request_method=self.RequestMethod.DELETE
+        )
+
+    def update_channel(self,
+                       channel_name,
+                       add_all_followers=None,
+                       auto_add_future_followers=None,
+                       category_code=None):
+        """
+        Updates the channel.
+        :param channel_name: the name of the channel to change
+        :param add_all_followers: whether to add all followers from your main channel to this channel
+        :param auto_add_future_followers: whether to add all followers to the main channel (your account) to this
+        channel as well (so that they follow both channels)
+        :param category_code: the category code to change. List available categories with the get_categories function
+        :return: the new channel item
+        """
+        payload = {
+            "channelName": channel_name
         }
 
-        # Get the number to which to text the referral code.
-        current_texting_number_data = self.__post_request(self.__get_payload_dict(),
-                                                          endpoint="get_current_texting_number")
-        texting_number = None
-        if "data" not in current_texting_number_data:
-            # Error received
-            return current_texting_number_data
-        if "number" in current_texting_number_data["data"]:
-            texting_number = current_texting_number_data["data"]["number"]
-            options["textCodeTo"] = texting_number
+        if add_all_followers is not None:
+            payload['addAllFollowers'] = add_all_followers
+        if auto_add_future_followers is not None:
+            payload['autoAddFutureFollowers'] = auto_add_future_followers
+        if category_code is not None:
+            payload['categoryCode'] = category_code
 
-        # Get the referral code.
-        sub_item_payload = self.__get_payload_dict()
-        sub_item_payload["subscription"] = channel_id
-        subscription_item = self.__post_request(sub_item_payload, endpoint="get_subscription_item")
-        if "data" not in subscription_item:
-            # Error received.
-            return subscription_item
-        if "referralCode" in subscription_item["data"]:
-            referral_code = subscription_item["data"]["referralCode"]
-            options["referralCode"] = referral_code
-            if texting_number is not None:
-                options["signUpViaText"] = "Text @" + str(referral_code) + " to " + str(texting_number) + "."
+        return self._request(
+            payload=payload,
+            endpoint="channel",
+            request_method=self.RequestMethod.PATCH
+        )
 
-        return {
-            "data": {
-                "inviteOptions": options
+    def get_channel(self, channel_name=None):
+        """
+        If channel_name is not provided, the user's main channel is returned. (This is the default channel that
+        you push to if you do not create a channel. This is also known as the main channel.)
+
+        :param channel_name: the name of the channel to retrieve. if None, the main channel (your account channel) will
+        be retrieved
+        :return: the channel
+        """
+        payload = dict()
+        if channel_name is not None:
+            payload = {
+                "channelName": channel_name
             }
+        return self._request(
+            payload=payload,
+            endpoint="channel",
+            request_method=self.RequestMethod.GET
+        )
+
+    def get_channels(self):
+        """
+        Lists the channels
+        :return: Your channels
+        """
+        return self._request(
+            payload={},
+            endpoint="channels",
+            request_method=self.RequestMethod.GET
+        )
+
+    def channel_profile_image_upload(self, image_path, is_png, channel_name=None):
+        """
+        :param image_path: the path to the image
+        :param is_png: whether or not the image is PNG or JPEG
+        :param channel_name: the channel name of the channel whose profile image is being changed. if None, the user
+        account's profile image will change
+        :return: the response from the request
+        """
+
+        file_type = "image/jpeg"
+        if is_png:
+            file_type = "image/png"
+
+        files = {
+            'image': ("my_file_name", open(image_path, 'rb'), file_type)
         }
 
-    def get_display_name_to_channel_id_mapping(self):
-        """
-        Maps human display names to the ID of the channel. When you create a channel, you supply a human-readable
-        display name, which creates an ID. You need this ID to push to that channel and get its invite options.
-        :return: The mapping; or an error if there is one
-        """
-        channel_data = self.__post_request(self.__get_payload_dict(), endpoint="get_my_channels")
-        if "data" not in channel_data:
-            # Error received
-            return channel_data
-        channel_id_to_display_name_map = {}
-        for channel in channel_data["data"]:
-            channel_id = channel.get("subscription", None)
-            display_name = channel.get("displayName", None)
-            if channel_id is not None:
-                channel_id_to_display_name_map[display_name] = channel_id
-        return {
-            "data": channel_id_to_display_name_map
-        }
+        if channel_name is None:
+            payload = dict()
+        else:
+            payload = {
+                "channelName": channel_name
+            }
+
+        return self._request(
+            payload=payload,
+            endpoint="channel/profile_image",
+            request_method=self.RequestMethod.POST,
+            files=files
+        )
 
     def push(self,
-             call_to_action,
+             message,
              subtitle=None,
              body=None,
              schedule_time_stamp=None,
@@ -176,13 +250,13 @@ class SpontitResource:
              link=None,
              should_open_link_in_app=None,
              ios_deep_link=None,
-             channel_id=None):
+             channel_name=None):
         """
         Sends a push notification.
-        :param call_to_action: The primary content of the push notification. Limited to 100 characters. Appears in the
+        :param message: The primary content of the push notification. Limited to 100 characters. Appears in the
         notification itself.
         :param subtitle: A subtitle to include in the push notification. Does not appear after opening the notification.
-        :param body: A body of up to 500 characters to include for when the user opens the push notification. Currently
+        :param body: A body of up to 5000 characters to include for when the user opens the push notification. Currently
         only available for iOS.
         :param schedule_time_stamp: Schedule the push notification for a later time. Int, epoch timestamp.
         :param expiration: Length of time for which the notification should exist. Set to Expiration.
@@ -191,16 +265,15 @@ class SpontitResource:
         in the Safari browser or other app. Set to False when attaching a website to the link attribute that you
         expect to open within an app (e.g. a Tweet that you want to open inside of the Twitter app).
         :param ios_deep_link: A deep link to another iOS app of the format *://*. Only for iOS versions >= v6.0.1.
-        :param channel_id: The channel ID of the push notification to send to. Default is your main channel. To get a
-        channel ID, call get_display_name_to_channel_id_mapping. To create a channel, call create_channel.
+        :param channel_name: The name of your channel
         :return: The result of the call, either with an error or with a result.
         """
         # Construct the payload.
-        payload = self.__get_payload_dict()
+        payload = dict()
 
         # Type check call_to_action and add to payload.
-        assert type(call_to_action) == str
-        payload["callToAction"] = call_to_action
+        assert type(message) == str
+        payload["message"] = message
 
         # If link exists, type check and add to payload.
         if link is not None:
@@ -236,9 +309,12 @@ class SpontitResource:
             assert type(ios_deep_link) == str
             payload["iOSDeepLink"] = ios_deep_link
 
-        payload["userId"] = self.user_id
-        if channel_id is not None:
-            assert type(channel_id) == str
-            payload["userId"] = channel_id
+        if channel_name is not None:
+            assert type(channel_name) == str
+            payload["channelName"] = channel_name
 
-        return self.__post_request(payload, self.push.__name__)
+        return self._request(
+            payload=payload,
+            endpoint="push",
+            request_method=SpontitResource.RequestMethod.POST
+        )

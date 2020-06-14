@@ -161,10 +161,6 @@ class Examples:
         """
         Creates a new channel, uploads a profile image, and sends a simple push notification to it.
         You should see the profile image in the push notification.
-
-        To change the profile image of your account (main channel), simply call channel_profile_image_upload
-        without supplying a channel name.
-
         :return: the result of the push notification request
         """
         new_channel_display_name = "Profile Image Channel"

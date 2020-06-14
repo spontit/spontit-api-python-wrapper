@@ -7,13 +7,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="spontit",
-    version="1.0.4",
+    version="1.0.5",
     author="Spontit Inc",
     author_email="info@spontit.io",
-    description="Send your own mobile push notifications.",
+    description="Send your own push notifications.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/joshwolff1/spontit_api",
+    url="https://github.com/spontit/spontit-api-python-wrapper",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

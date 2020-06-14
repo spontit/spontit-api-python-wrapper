@@ -2,9 +2,11 @@ README.md
 setup.cfg
 setup.py
 spontit/__init__.py
-spontit/examples.py
 spontit/resource.py
 spontit.egg-info/PKG-INFO
 spontit.egg-info/SOURCES.txt
 spontit.egg-info/dependency_links.txt
 spontit.egg-info/top_level.txt
+spontit/examples/__init__.py
+spontit/examples/dirty_image_upload_example.py
+spontit/examples/examples.py

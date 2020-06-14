@@ -1,8 +1,8 @@
 Metadata-Version: 2.1
 Name: spontit
-Version: 1.0.4
-Summary: Send your own mobile push notifications.
-Home-page: https://github.com/joshwolff1/spontit_api
+Version: 1.0.5
+Summary: Send your own push notifications.
+Home-page: https://github.com/spontit/spontit-api-python-wrapper
 Author: Spontit Inc
 Author-email: info@spontit.io
 License: UNKNOWN
@@ -13,10 +13,12 @@ Description: # SPONTIT :vibration_mode:
         
         ## TL;DR :running:
         
-        1) Sign up at <a href="https://www.spontit.com" target="_blank">spontit.com</a> (you might need to click "Take me to the Desktop version."). Note down your username. It should be displayed in the top left.
+        **Spontit is 100% free! Please star the repo and rate/review the Spontit app in the App Store as well.**
+        
+        1) Sign up at <a href="https://www.spontit.com" target="_blank">spontit.com</a> (you might need to click "Take me to the Desktop version."). Note down your username. It should be displayed in the top left of the <a href="https://spontit.com/home">homepage</a>.
         2) Get a secret key at <a href="https://www.spontit.com/secret_keys" target="_blank">spontit.com/secret_keys</a>. 
         3) Get the iPhone app or Android app. Sign in and allow notifications.
-        4) `pip install spontit && pip install requests`
+        4) `pip install spontit --upgrade && pip install requests`
         5) `from spontit import SpontitResource`
         6) `resource = SpontitResource(my_username, my_secret_key)`
         7) `response = resource.push("Hello!")`
@@ -66,6 +68,7 @@ Description: # SPONTIT :vibration_mode:
         #### Note on Our Development Priorities
         
         We prioritize development of the iOS application over the website. If at any time, we describe a feature and it does not seem to be on the website, it might only exist in the iOS application. Please email us at info {at} spontit {dot} io so that we can clarify this to you and other developers. You are more than welcome to <a href="https://github.com/joshwolff1/spontit_api/issues/new" target="_blank">add a feature request</a>.
+        
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
