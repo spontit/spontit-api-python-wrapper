@@ -5,7 +5,7 @@ Using the Spontit API and Spontit app/webapp, you can send your own push notific
 
 ## TL;DR :running:
 
-**Spontit is 100% free! Please star the repo and rate/review the Spontit app in the App Store as well.**
+**Spontit is 100% free! Please star the repo and rate/review the Spontit app in the App Store as well. Please invite a friend or two to Spontit!**
 
 1) Sign up at <a href="https://www.spontit.com" target="_blank">spontit.com</a> (you might need to click "Take me to the Desktop version"). Note down your username. It should be displayed on your <a href="https://spontit.com/profile" target="_blank">profile</a> once you are signed in.
 2) Get a secret key at <a href="https://www.spontit.com/secret_keys" target="_blank">spontit.com/secret_keys</a>. 
