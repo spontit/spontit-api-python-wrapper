@@ -41,21 +41,13 @@ You can change your user ID and display name at any time <a href="https://www.sp
     <img src="https://github.com/spontit/spontit-api-python-wrapper/raw/master/images/main_channel_push.png" /> 
 </p>
 
-Above we see a push notification sent to the main channel. Here, "Josh Wolff" is the first and last name of the user. The push message is the displayed text. The image shown is the personal profile picture of the user (see step 10 above). If the user opens the notification, they can open a link attached, if any, among other options (`help(SpontitResource)`). If they have an iPhone, they can like and comment on the notification.
+Above we see a push notification sent to the main channel. Here, "Josh Wolff" is the display name of the user. The push message is the displayed text. The image shown is the personal profile picture of the user (see step 10 above). If the user opens the notification, they can open a link attached, if any, among other options (`help(SpontitResource)`). If they have an iPhone, they can like and comment on the notification.
 
 <p align="center">
     <img src="https://github.com/spontit/spontit-api-python-wrapper/raw/master/images/topic_push.png" /> 
 </p>
 
 Above we see a push notification to a channel (separate from the main channel). Josh owns this channel, but as you can see, it looks like its own account. "Dem 2020 Polls" is the channel name, the non-bold text is the message, and the image is the image set for the channel (see step 10 above).
-
-### Limitations
-
-#### Rate Limits
-
-Each channel (including the main channel) has an individual rate limit of 1 push per second. For example, you can push to your main channel and two other channels in the same second, but you cannot push 3 times to one channel in the same second.
-
-If you exceed the rate limit, we will specify this in the response returned for the call to push.
 
 #### Note on Our Development Priorities
 
