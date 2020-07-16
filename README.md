@@ -7,7 +7,7 @@ Using the Spontit API and Spontit app/webapp, you can send your own push notific
 
 This repository is the Python wrapper for our API. To see code snippets for several languages, see our documentation <a href="https://api.spontit.com">here</a>.
 
-## TL;DR :running:
+## RAPID START :running:
 
 **Spontit is 100% free! Please star the repo and rate/review the Spontit app in the App Store as well. Please invite a friend or two to Spontit!**
 
@@ -24,7 +24,7 @@ This repository is the Python wrapper for our API. To see code snippets for seve
 9) Or try an example! Check out the <a href="https://github.com/spontit/spontit-api-python-wrapper/blob/master/spontit/examples/examples.py">examples</a>.
 10) You can customize the image of the notification on the website, iPhone app, or via the API by setting the image for the respective channel. See the image example titled `create_new_channel_with_profile_image_and_push_to_it` in the <a href="https://github.com/spontit/spontit-api-python-wrapper/blob/master/spontit/examples/examples.py">examples</a>.
 11) To push to others, have them follow the channel to which you will push (e.g. share <a href="https://spontit.com">spontit.com/my_username</a>). You can see available invite options by calling `print(resource.get_channel(...))` and supply the channel name. See the functions titled `create_new_channel_and_get_invite_options` and `get_invite_options_for_my_main_account` in the <a href="https://github.com/spontit/spontit-api-python-wrapper/blob/master/spontit/examples/examples.py">examples</a>.
-12) Spontit is more than just broadcasting. You can send pushes to specific users and push personalized content. See how to do so at `simple_push_to_specific_followers_example` and `specific_followers_and_channel_example` in the <a href="https://github.com/spontit/spontit-api-python-wrapper/blob/master/spontit/examples/examples.py">examples</a>. You simply input a list of usernames and it will push to those users (provided they follow the specified channel). You can list the usernames of those who follow one of your specified channels. See an example of how to do so at `list_followers_example` and `list_followers_for_channel_example` in the <a href="https://github.com/spontit/spontit-api-python-wrapper/blob/master/spontit/examples/examples.py">examples</a>.  
+12) <b>Spontit is more than just broadcasting. You can send pushes to specific users and push personalized content.</b> See how to do so at `simple_push_to_specific_followers_example` and `specific_followers_and_channel_example` in the <a href="https://github.com/spontit/spontit-api-python-wrapper/blob/master/spontit/examples/examples.py">examples</a>. You simply input a list of usernames and it will push to those users (provided they follow the specified channel). You can list the usernames of those who follow one of your specified channels. See an example of how to do so at `list_followers_example` and `list_followers_for_channel_example` in the <a href="https://github.com/spontit/spontit-api-python-wrapper/blob/master/spontit/examples/examples.py">examples</a>.  
 13) We are constantly working on expanding the functionality of Spontit. We GREATLY appreciate your input - feel free to <a href="https://github.com/spontit/spontit-api-python-wrapper/issues/new" target="_blank">add a feature request</a> on our Github. :smiley:
 
 ### Getting Started :white_check_mark:
