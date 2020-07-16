@@ -51,7 +51,7 @@ Above we see a push notification sent to the main channel. Here, "Josh Wolff" is
     <img src="https://github.com/spontit/spontit-api-python-wrapper/raw/master/images/topic_push.png" /> 
 </p>
 
-Above we see a push notification to a channel (separate from the main channel). Josh owns this channel, but as you can see, it looks like its own account. "Dem 2020 Polls" is the channel name, the non-bold text is the message, and the image is the image set for the channel (see step 10 above).
+Above we see a push notification to a channel (separate from the main channel). Josh owns this channel, but as you can see, it looks like its own account. "Dem 2020 Polls" is the channel name, the non-bold text is the message, and the image is the image set for the channel (see step 10 above). You can also change the push title with the pushTitle attribute.
 
 #### Note on Our Development Priorities
 

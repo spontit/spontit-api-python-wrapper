@@ -19,7 +19,64 @@ class Examples:
         Sends a simple push notification.
         :return: the result of the call to push
         """
-        return self.__resource.push("Hello!")
+        response = self.__resource.push("Hello!")
+        print(response)
+        return response
+
+    def simple_push_to_specific_followers_example(self):
+        """
+        Sends a push notification to specifically you. You can specify which followers should receive the notification
+        as shown below. To list your followers, see the list_followers_example().
+        :return:
+        """
+        followers = [self.__resource.user_id]
+        response = self.__resource.push(
+            "Hello to myself!",
+            body="No one else can see this until I specifically share it with them, by either sharing"
+            " the link or tagging them in the comments.",
+            push_to_followers=followers
+        )
+        print(response)
+        return response
+
+    def list_followers_example(self):
+        """
+        Lists all your followers.
+        :return:
+        """
+        response = self.__resource.list_followers()
+        print(response)
+        return response
+
+    def specific_followers_and_channel_example(self):
+        """
+        Sends a push notification to a specific user following the channel. The user must be following the channel in
+        order to receive it. You can specify which followers should receive the notification as shown below. To list
+        your followers, see the list_followers_for_channel_example().
+        :return:
+        """
+        # Create the channel if it is not yet created.
+        self.__resource.create_channel("Test channel")
+        followers = [self.__resource.user_id]
+        response = self.__resource.push(
+            f"Hello to {followers[0]}",
+            channel_name="Test channel",
+            push_to_followers=followers
+        )
+        print(response)
+        return response
+
+    def list_followers_for_channel_example(self):
+        """
+        Lists all your followers for this particular channel.
+        :return:
+        """
+        self.__resource.create_channel("Test channel")
+        response = self.__resource.list_followers(
+            channel_name="Test channel"
+        )
+        print(response)
+        return response
 
     def scheduled_push(self):
         """
@@ -47,25 +104,13 @@ class Examples:
                                     schedule_time_stamp=int(time.time()) + 3600,
                                     expiration=SpontitResource.Expiration(days=0, hours=1, minutes=0))
 
-    def rate_limit_example(self):
-        """
-        Spontit currently only supports sending one push notification per second.
-        This function throttles that limit as an example of what you can expect if you exceed that limit.
-        :return: the final response of the 10 calls to push.
-        """
-        response_received = None
-        for _ in range(10):
-            response_received = self.simple_push_example()
-            print(response_received)
-        return response_received
-
     def subtitle_body_example(self):
         """
         Sends a push notification with a subtitle and a body.
         :return: the result of the call to push
         """
         return self.__resource.push("Hello!",
-                                    subtitle="An API Notice",
+                                    ios_subtitle="An API Notice",
                                     body="This is a body. You can write up to 500 characters "
                                          "in the body. The body does not show up in the push "
                                          "notification. The body only appears once the user "
@@ -106,6 +151,7 @@ class Examples:
         :return: the result of the call to push
         """
         return self.__resource.push("Please rate Spontit in the App Store!",
+                                    push_title="Spontit Rating Request",
                                     link="https://itunes.apple.com/app/id1448318683?action=write-review",
                                     should_open_link_in_app=False)
 
@@ -133,6 +179,7 @@ class Examples:
         :return: the result of the call to push
         """
         return self.__resource.push("Please rate Spontit in the App Store!",
+                                    push_title="Spontit Rating Request",
                                     ios_deep_link="itms-apps://itunes.apple.com/app/id1448318683?action=write-review")
 
     def create_new_channel(self):
@@ -264,8 +311,11 @@ class Examples:
             self.simple_push_example,
             self.scheduled_push,
             self.immediate_expiration_push,
+            self.simple_push_to_specific_followers_example,
+            self.list_followers_example,
+            self.list_followers_for_channel_example,
+            self.specific_followers_and_channel_example,
             self.expire_one_hour_after_schedule,
-            self.rate_limit_example,
             self.subtitle_body_example,
             self.post_a_link_ex_1,
             self.post_a_link_ex_2,

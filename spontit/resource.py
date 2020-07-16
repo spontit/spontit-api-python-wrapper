@@ -84,7 +84,7 @@ class SpontitResource:
             r = requests.request(
                 request_method.value,
                 url=self.__url + endpoint,
-                data=payload,
+                data=json.dumps(payload),
                 headers=headers
             )
         else:
@@ -95,7 +95,6 @@ class SpontitResource:
                 files=files,
                 headers=headers
             )
-
         try:
             json_content = json.loads(r.content)
         except json.decoder.JSONDecodeError:
@@ -241,10 +240,26 @@ class SpontitResource:
             files=files
         )
 
+    def list_followers(self, channel_name=None):
+        # Construct the payload.
+        payload = dict()
+        if channel_name is not None:
+            assert type(channel_name) == str
+            payload["channelName"] = channel_name
+
+        # Make the request.
+        return self._request(
+            payload=payload,
+            endpoint="followers",
+            request_method=self.RequestMethod.GET
+        )
+
     def push(self,
              message,
-             subtitle=None,
+             push_title=None,
+             ios_subtitle=None,
              body=None,
+             push_to_followers=None,
              schedule_time_stamp=None,
              expiration=None,
              link=None,
@@ -255,9 +270,12 @@ class SpontitResource:
         Sends a push notification.
         :param message: The primary content of the push notification. Limited to 100 characters. Appears in the
         notification itself.
-        :param subtitle: A subtitle to include in the push notification. Does not appear after opening the notification.
+        :param push_title: A title of your push. Limited to 100 characters.
+        :param ios_subtitle: A subtitle to include in the push notification. Does not appear after opening the
+        notification. Limited to 20 characters.
         :param body: A body of up to 5000 characters to include for when the user opens the push notification. Currently
         only available for iOS.
+        :param push_to_followers: The specific followers to send the push to. A list of strings of the userIds
         :param schedule_time_stamp: Schedule the push notification for a later time. Int, epoch timestamp.
         :param expiration: Length of time for which the notification should exist. Set to Expiration.
         :param link: A link to include in the notification. Appears once the user opens the notification.
@@ -284,13 +302,21 @@ class SpontitResource:
             assert type(should_open_link_in_app) == bool
             payload["openLinkInApp"] = int(bool(should_open_link_in_app))
 
-        if subtitle is not None:
-            assert type(subtitle) == str
-            payload["subtitle"] = subtitle
+        if push_title is not None:
+            assert type(push_title) == str
+            payload["pushTitle"] = push_title
+
+        if ios_subtitle is not None:
+            assert type(ios_subtitle) == str
+            payload["subtitle"] = ios_subtitle
 
         if body is not None:
             assert type(body) == str
             payload["body"] = body
+
+        if push_to_followers is not None:
+            assert type(push_to_followers) == list or type(push_to_followers) == set
+            payload["individualFollowers"] = list(push_to_followers)
 
         if schedule_time_stamp is not None:
             if type(schedule_time_stamp) is not int:

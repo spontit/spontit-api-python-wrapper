@@ -4,21 +4,11 @@
     <option name="SCOPE_TYPE" value="8" />
     <option name="CUSTOM_SCOPE_NAME" value="Module 'spontit_api'" />
   </component>
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/../spontit_backend_code/Manual Functions/live_updates.py" description="import boto3&#10;import urllib.request&#10;from datetime i..." line="0" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="527ee34c-5f7a-4426-a51e-0343dc742723" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib/spontit/resource.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/spontit/resource.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/spontit-1.0.0-py3-none-any.whl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/spontit-1.0.0.tar.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/spontit-1.0.4-py3-none-any.whl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/spontit-1.0.4.tar.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spontit.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/spontit.egg-info/PKG-INFO" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spontit.egg-info/SOURCES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/spontit.egg-info/SOURCES.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spontit/examples/examples.py" beforeDir="false" afterPath="$PROJECT_DIR$/spontit/examples/examples.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spontit/resource.py" beforeDir="false" afterPath="$PROJECT_DIR$/spontit/resource.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,8 +22,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="235">
-                <caret line="26" column="58" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="58" />
+              <first_editor relative-caret-position="660">
+                <caret line="44" column="35" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
               </first_editor>
               <second_editor />
             </state>
@@ -43,11 +33,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spontit/resource.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3135">
-              <caret line="212" column="36" selection-start-line="212" selection-start-column="8" selection-end-line="212" selection-end-column="36" />
+            <state relative-caret-position="277">
+              <caret line="92" column="37" lean-forward="true" selection-start-line="92" selection-start-column="37" selection-end-line="92" selection-end-column="37" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/spontit/examples/examples.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="404">
+              <caret line="356" lean-forward="true" selection-start-line="356" selection-end-line="356" />
             </state>
           </provider>
         </entry>
@@ -73,15 +72,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/spontit/examples/examples.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="178" column="44" lean-forward="true" selection-start-line="178" selection-start-column="44" selection-end-line="178" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -93,13 +83,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>time.</find>
-      <find>print</find>
-      <find>error</find>
-      <find>errors</find>
-      <find>&quot;create</find>
-      <find>get_subscription_item</find>
-      <find>push</find>
       <find>__get_payload_dict</find>
       <find>expiration</find>
       <find>get_time_stamp_from_schedule</find>
@@ -110,10 +93,8 @@
       <find>get_channel</find>
       <find>__request</find>
       <find>dirty_channel_profile_image_upload</find>
-      <find>channel_profile_image_upload</find>
       <find>get_invite_options</find>
       <find>update_</find>
-      <find>create_new_channel_with_profile_image_and_push_to_it</find>
       <find>get_channel_categories</find>
       <find>get_categories</find>
       <find>create_channel</find>
@@ -123,6 +104,15 @@
       <find>get_channels</find>
       <find>__get_headers</find>
       <find>import os</find>
+      <find>rate_limit_example</find>
+      <find>simple_push_example</find>
+      <find>message</find>
+      <find>simple_specific_followers_example</find>
+      <find>subtitle</find>
+      <find>ios_subt</find>
+      <find>channel_profile_image_upload</find>
+      <find>create_new_channel_with_profile_image_and_push_to_it</find>
+      <find>_request</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -142,10 +132,10 @@
         <option value="$PROJECT_DIR$/spontit/util.py" />
         <option value="$PROJECT_DIR$/spontit/examples.py" />
         <option value="$PROJECT_DIR$/spontit/examples/image_upload_example.py" />
-        <option value="$PROJECT_DIR$/spontit/resource.py" />
         <option value="$PROJECT_DIR$/spontit/examples/dirty_image_upload_example.py" />
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/spontit/examples/examples.py" />
+        <option value="$PROJECT_DIR$/spontit/resource.py" />
       </list>
     </option>
   </component>
@@ -161,38 +151,28 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="spontit_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spontit_api" type="462c0819:PsiDirectoryNode" />
+              <item name="spontit-api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spontit-api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="spontit_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spontit_api" type="462c0819:PsiDirectoryNode" />
-              <item name="archives" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spontit_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spontit_api" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spontit_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spontit_api" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="spontit-api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spontit-api" type="462c0819:PsiDirectoryNode" />
+              <item name="spontit" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/spontit" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -218,7 +198,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.image_upload_example">
+  <component name="RunManager" selected="Python.resource (1)">
     <configuration name="examples" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="spontit_api" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -305,9 +285,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.image_upload_example" />
-        <item itemvalue="Python.examples" />
         <item itemvalue="Python.resource (1)" />
+        <item itemvalue="Python.examples" />
+        <item itemvalue="Python.image_upload_example" />
         <item itemvalue="Python.resource" />
       </list>
     </recent_temporary>
@@ -334,13 +314,13 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.36385542" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3630731" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.30963856" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.30855018" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -393,13 +373,13 @@
     <entry file="file://$PROJECT_DIR$/spontit.egg-info/SOURCES.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/spontit/resource.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3135">
-          <caret line="212" column="36" selection-start-line="212" selection-start-column="8" selection-end-line="212" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="660">
+            <caret line="44" column="35" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
@@ -420,20 +400,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="235">
-            <caret line="26" column="58" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="58" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/spontit/resource.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="92" column="37" lean-forward="true" selection-start-line="92" selection-start-column="37" selection-end-line="92" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spontit/examples/examples.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="178" column="44" lean-forward="true" selection-start-line="178" selection-start-column="44" selection-end-line="178" selection-end-column="44" />
+        <state relative-caret-position="404">
+          <caret line="356" lean-forward="true" selection-start-line="356" selection-end-line="356" />
         </state>
       </provider>
     </entry>
