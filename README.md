@@ -58,4 +58,4 @@ Above we see a push notification to a channel (separate from the main channel). 
 
 #### Note on Our Development Priorities
 
-We prioritize development of the iOS application over the website. If at any time, we describe a feature and it does not seem to be on the website, it might only exist in the iOS application. Please email us at info {at} spontit {dot} io so that we can clarify this to you and other developers. You are more than welcome to <a href="https://github.com/spontit/spontit-api-python-wrapper/issues/new" target="_blank">add a feature request</a>.
+We prioritize development of the iOS application over the website. If at any time, we describe a feature and it does not seem to be on the website, it might only exist in the iOS application. Please email us at info {at} spontit {dot} com so that we can clarify this to you and other developers. You are more than welcome to <a href="https://github.com/spontit/spontit-api-python-wrapper/issues/new" target="_blank">add a feature request</a>.
