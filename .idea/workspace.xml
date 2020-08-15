@@ -6,18 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="527ee34c-5f7a-4426-a51e-0343dc742723" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/helpers/update.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/spontit_api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/spontit_api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib/spontit/examples/examples.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/spontit/examples/examples.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib/spontit/resource.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib/spontit/resource.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/spontit-1.0.5-py3-none-any.whl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/spontit-1.0.5.tar.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spontit.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/spontit.egg-info/PKG-INFO" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spontit/examples/examples.py" beforeDir="false" afterPath="$PROJECT_DIR$/spontit/examples/examples.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spontit/resource.py" beforeDir="false" afterPath="$PROJECT_DIR$/spontit/resource.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spontit/resource.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="46" column="49" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="49" />
+            <state relative-caret-position="-3812">
+              <caret line="65" column="37" lean-forward="true" selection-start-line="65" selection-start-column="37" selection-end-line="65" selection-end-column="37" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -51,11 +40,16 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spontit/examples/examples.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="25" column="49" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="49" />
+            <state relative-caret-position="-142">
+              <caret line="347" column="36" lean-forward="true" selection-start-line="347" selection-start-column="36" selection-end-line="347" selection-end-column="36" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -92,7 +86,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>invite</find>
       <find>googl</find>
       <find>requests</find>
       <find>get_channel</find>
@@ -122,6 +115,7 @@
       <find>post_a_link_ex_3</find>
       <find>simple_push_to_specific_phone_numbers_and_emails_example</find>
       <find>simple_push_to_specific_followers_example</find>
+      <find>individual</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -331,13 +325,13 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3630731" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.19702603" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.30855018" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.30855018" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -426,8 +420,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spontit/examples/examples.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="25" column="49" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="49" />
+        <state relative-caret-position="-142">
+          <caret line="347" column="36" lean-forward="true" selection-start-line="347" selection-start-column="36" selection-end-line="347" selection-end-column="36" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
@@ -436,13 +430,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spontit/resource.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="46" column="49" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="49" />
+        <state relative-caret-position="-3812">
+          <caret line="65" column="37" lean-forward="true" selection-start-line="65" selection-start-column="37" selection-end-line="65" selection-end-column="37" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
