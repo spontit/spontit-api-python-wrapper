@@ -260,6 +260,8 @@ class SpontitResource:
              ios_subtitle=None,
              body=None,
              push_to_followers=None,
+             push_to_phone_numbers=None,
+             push_to_emails=None,
              schedule_time_stamp=None,
              expiration=None,
              link=None,
@@ -276,6 +278,14 @@ class SpontitResource:
         :param body: A body of up to 5000 characters to include for when the user opens the push notification. Currently
         only available for iOS.
         :param push_to_followers: The specific followers to send the push to. A list of strings of the userIds
+        :param push_to_phone_numbers: The specific users to push to, defined by the phone number they used to sign up.
+        You can still push to these users even if they don't follow you. However, they have the option to report you
+        for spam, and you could have your account restricted if multiple users do. They also have the option to follow
+        you directly from the push.
+        :param push_to_emails: The specific users to push to, defined by the email they used to sign up.
+        You can still push to these users even if they don't follow you. However, they have the option to report you
+        for spam, and you could have your account restricted if multiple users do. They also have the option to follow
+        you directly from the push.
         :param schedule_time_stamp: Schedule the push notification for a later time. Int, epoch timestamp.
         :param expiration: Length of time for which the notification should exist. Set to Expiration.
         :param link: A link to include in the notification. Appears once the user opens the notification.
@@ -316,7 +326,15 @@ class SpontitResource:
 
         if push_to_followers is not None:
             assert type(push_to_followers) == list or type(push_to_followers) == set
-            payload["individualFollowers"] = list(push_to_followers)
+            payload["pushToFollowers"] = list(push_to_followers)
+
+        if push_to_phone_numbers is not None:
+            assert type(push_to_phone_numbers) == list or type(push_to_phone_numbers) == set
+            payload["pushToPhoneNumbers"] = list(push_to_phone_numbers)
+
+        if push_to_emails is not None:
+            assert type(push_to_emails) == list or type(push_to_emails) == set
+            payload["pushToEmails"] = list(push_to_emails)
 
         if schedule_time_stamp is not None:
             if type(schedule_time_stamp) is not int:
