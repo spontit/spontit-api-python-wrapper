@@ -39,6 +39,30 @@ class Examples:
         print(response)
         return response
 
+    def simple_push_to_specific_phone_numbers_and_emails_example(self):
+        """
+        Sends a push notification to phone numbers and emails. We link the user account to the phone numbers and emails
+        defined, and then send a push via Spontit.
+        The users linked **do not have to follow your account** to receive the push notification.
+        They will have the option to follow you or report you for spam. If you are reported for spam multiple times,
+        your account will be restricted.
+        :return:
+        """
+        # TODO- Replace with a real phone number.
+        phone_numbers = ["+18005550101"]
+        # TODO- Replace with a real email.
+        emails = ['fake.email@fake.com']
+        response = self.__resource.push(
+            "Hello to other users!",
+            body="Add any phone numbers or emails to this push. Tell users to sign up on Spontit with the same "
+                 "phone number / email as they signed up with using your service. Then you can push directly to them.",
+            push_to_phone_numbers=phone_numbers,
+            push_to_emails=emails
+        )
+        print(f"Notification sent to:\nEmails: {str(emails)}\nPhone numbers: {str(phone_numbers)}")
+        print(response)
+        return response
+
     def list_followers_example(self):
         """
         Lists all your followers.
@@ -312,6 +336,7 @@ class Examples:
             self.scheduled_push,
             self.immediate_expiration_push,
             self.simple_push_to_specific_followers_example,
+            self.simple_push_to_specific_phone_numbers_and_emails_example,
             self.list_followers_example,
             self.list_followers_for_channel_example,
             self.specific_followers_and_channel_example,
@@ -342,8 +367,11 @@ class Examples:
 
 if __name__ == "__main__":
     # Try an example...
-    spontit_src = SpontitResource("my_username", "my_secret_key")
+    # Get your userId at spontit.com/profile
+    # Get your secretKey at spontit.com/secret_keys
+    spontit_src = SpontitResource("my_user_id", "my_secret_key")
     example_instance = Examples(spontit_src)
+
     push_response = example_instance.simple_push_example()
     print("Simple push example result: " + str(push_response))
 

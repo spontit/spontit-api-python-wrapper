@@ -7,10 +7,10 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="spontit",
-    version="1.0.5",
+    version="1.0.7",
     author="Spontit Inc",
-    author_email="info@spontit.io",
-    description="Send your own push notifications.",
+    author_email="info@spontit.com",
+    description="Send push notifications without your app, website, or notification infrastructure.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/spontit/spontit-api-python-wrapper",
