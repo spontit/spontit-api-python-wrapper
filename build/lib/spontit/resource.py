@@ -255,10 +255,10 @@ class SpontitResource:
         )
 
     def push(self,
-             message,
+             content=None,
+             push_content=None,
              push_title=None,
              ios_subtitle=None,
-             body=None,
              push_to_followers=None,
              push_to_phone_numbers=None,
              push_to_emails=None,
@@ -266,17 +266,21 @@ class SpontitResource:
              expiration=None,
              link=None,
              should_open_link_in_app=None,
+             open_in_home_feed=None,
              ios_deep_link=None,
              channel_name=None):
         """
         Sends a push notification.
-        :param message: The primary content of the push notification. Limited to 100 characters. Appears in the
-        notification itself.
+        :param content: Content of up to 2500 characters. As much of this content as possible will appear when the
+        notification first pops up. The user can then view the entire body by opening the notification. Required if
+        "push_content" is not provided.
+        :param push_content: The content that appears in the push notification itself. Limited to 100 characters.
+        The purpose of the push_content is to let you control what appears when the notification first pops up. Required
+        if "content" is not provided. If you do not provide this parameter, then we show as much of the "content"
+        provided as possible when the notification pops up.
         :param push_title: A title of your push. Limited to 100 characters.
         :param ios_subtitle: A subtitle to include in the push notification. Does not appear after opening the
         notification. Limited to 20 characters.
-        :param body: A body of up to 5000 characters to include for when the user opens the push notification. Currently
-        only available for iOS.
         :param push_to_followers: The specific followers to send the push to. A list of strings of the userIds
         :param push_to_phone_numbers: The specific users to push to, defined by the phone number they used to sign up.
         You can still push to these users even if they don't follow you. However, they have the option to report you
@@ -292,6 +296,8 @@ class SpontitResource:
         :param should_open_link_in_app: Whether or not to open the attached link within the Spontit app or externally
         in the Safari browser or other app. Set to False when attaching a website to the link attribute that you
         expect to open within an app (e.g. a Tweet that you want to open inside of the Twitter app).
+        :param open_in_home_feed: Upon tapping the notification, whether the notification should open in its own page
+        where the user can comment or whether the notification should open within the user's home feed.
         :param ios_deep_link: A deep link to another iOS app of the format *://*. Only for iOS versions >= v6.0.1.
         :param channel_name: The name of your channel
         :return: The result of the call, either with an error or with a result.
@@ -299,11 +305,15 @@ class SpontitResource:
         # Construct the payload.
         payload = dict()
 
-        # Type check call_to_action and add to payload.
-        assert type(message) == str
-        payload["message"] = message
+        try:
+            assert content is not None or push_content is not None
+        except AssertionError:
+            raise(Exception("You must provide a value for either the message, the body, or both, but not neither."))
 
-        # If link exists, type check and add to payload.
+        if push_content is not None:
+            assert type(push_content) == str
+            payload["pushContent"] = push_content
+
         if link is not None:
             assert type(link) == str
             payload["link"] = link
@@ -311,6 +321,10 @@ class SpontitResource:
         if should_open_link_in_app is not None:
             assert type(should_open_link_in_app) == bool
             payload["openLinkInApp"] = int(bool(should_open_link_in_app))
+
+        if open_in_home_feed is not None:
+            assert type(open_in_home_feed) == bool
+            payload["openInHomeFeed"] = int(bool(open_in_home_feed))
 
         if push_title is not None:
             assert type(push_title) == str
@@ -320,9 +334,9 @@ class SpontitResource:
             assert type(ios_subtitle) == str
             payload["subtitle"] = ios_subtitle
 
-        if body is not None:
-            assert type(body) == str
-            payload["body"] = body
+        if content is not None:
+            assert type(content) == str
+            payload["content"] = content
 
         if push_to_followers is not None:
             assert type(push_to_followers) == list or type(push_to_followers) == set
