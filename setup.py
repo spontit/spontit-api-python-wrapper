@@ -1,13 +1,11 @@
 import setuptools
 
-# Thank you to https://packaging.python.org/tutorials/packaging-projects/
-
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="spontit",
-    version="1.0.7",
+    version="1.0.8",
     author="Spontit Inc",
     author_email="info@spontit.com",
     description="Send push notifications without your app, website, or notification infrastructure.",

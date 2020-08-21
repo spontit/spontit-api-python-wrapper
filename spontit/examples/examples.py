@@ -31,8 +31,8 @@ class Examples:
         """
         followers = [self.__resource.user_id]
         response = self.__resource.push(
-            "Hello to myself!",
-            body="No one else can see this until I specifically share it with them, by either sharing"
+            push_content="Hello to myself!",
+            content="No one else can see this until I specifically share it with them, by either sharing"
             " the link or tagging them in the comments.",
             push_to_followers=followers
         )
@@ -53,9 +53,10 @@ class Examples:
         # TODO- Replace with a real email.
         emails = ['fake.email@fake.com']
         response = self.__resource.push(
-            "Hello to other users!",
-            body="Add any phone numbers or emails to this push. Tell users to sign up on Spontit with the same "
-                 "phone number / email as they signed up with using your service. Then you can push directly to them.",
+            push_content="Hello to other users!",
+            content="Add any phone numbers or emails to this push. Tell users to sign up on Spontit with the same "
+                    "phone number / email as they signed up with using your service. Then you can push directly to "
+                    "them.",
             push_to_phone_numbers=phone_numbers,
             push_to_emails=emails
         )
@@ -83,7 +84,7 @@ class Examples:
         self.__resource.create_channel("Test channel")
         followers = [self.__resource.user_id]
         response = self.__resource.push(
-            f"Hello to {followers[0]}",
+            content=f"Hello to {followers[0]}",
             channel_name="Test channel",
             push_to_followers=followers
         )
@@ -107,8 +108,10 @@ class Examples:
         Schedules a push notification for one hour from the current time.
         :return: the result of the call to push
         """
-        return self.__resource.push("Hello, in 1 hour",
-                                    schedule_time_stamp=int(time.time()) + 3600)
+        return self.__resource.push(
+            content="Hello, in 1 hour",
+            schedule_time_stamp=int(time.time()) + 3600
+        )
 
     def immediate_expiration_push(self):
         """
@@ -116,34 +119,41 @@ class Examples:
         polls approximately every 15-30 minutes, the notification will delete within 30 minutes.
         :return: the result of the call to push
         """
-        return self.__resource.push("Hello, expire ASAP (within 15 minutes)",
-                                    expiration=SpontitResource.Expiration(0, 0, 0))
+        return self.__resource.push(
+            content="Hello, expire ASAP (within 15 minutes)",
+            expiration=SpontitResource.Expiration(0, 0, 0)
+        )
 
     def expire_one_hour_after_schedule(self):
         """
         Schedules a push notification for one hour from now, and then expires it one hour later.
         :return: the result of the call to push
         """
-        return self.__resource.push("Hello, in 1 hour. Bye in 2.",
-                                    schedule_time_stamp=int(time.time()) + 3600,
-                                    expiration=SpontitResource.Expiration(days=0, hours=1, minutes=0))
+        return self.__resource.push(
+            content="Hello, in 1 hour. Bye in 2.",
+            schedule_time_stamp=int(time.time()) + 3600,
+            expiration=SpontitResource.Expiration(days=0, hours=1, minutes=0)
+        )
 
     def subtitle_body_example(self):
         """
         Sends a push notification with a subtitle and a body.
         :return: the result of the call to push
         """
-        return self.__resource.push("Hello!",
-                                    ios_subtitle="An API Notice",
-                                    body="This is a body. You can write up to 500 characters "
-                                         "in the body. The body does not show up in the push "
-                                         "notification. The body only appears once the user "
-                                         "opens the notification with their mobile phone. Currently,"
-                                         " the body only shows on iOS devices, but we will change "
-                                         "this soon. As a side note, the subtitle only shows on "
-                                         "the push notification, but does not show when the user "
-                                         "opens the app. Currently, the subtitle is only supported "
-                                         "for iOS devices.")
+        my_content = "This is a body. You can write up to 500 characters " \
+                     "in the body. The body does not show up in the push " \
+                     "notification. The body only appears once the user " \
+                     "opens the notification with their mobile phone. Currently," \
+                     " the body only shows on iOS devices, but we will change " \
+                     "this soon. As a side note, the subtitle only shows on " \
+                     "the push notification, but does not show when the user " \
+                     "opens the app. Currently, the subtitle is only supported " \
+                     "for iOS devices."
+        return self.__resource.push(
+            push_content="Hello!",
+            ios_subtitle="An API Notice",
+            content=my_content
+        )
 
     def post_a_link_ex_1(self):
         """
@@ -151,22 +161,27 @@ class Examples:
         so that the Twitter app opens (rather than opening twitter.com within the Spontit app).
         :return: the result of the call to push
         """
-        return self.__resource.push("Jack's first tweet.",
-                                    link="https://twitter.com/jack/status/20",
-                                    should_open_link_in_app=False,
-                                    body="This link does not open within the app. The purpose "
-                                         "is that we want the Twitter app to open. If set "
-                                         "should_open_link_in_app to True, then the link would "
-                                         "open within the Spontit app and the app would not "
-                                         "launch.")
+        my_content = "This link does not open within the app. The purpose " \
+                     "is that we want the Twitter app to open. If set " \
+                     "should_open_link_in_app to True, then the link would " \
+                     "open within the Spontit app and the app would not " \
+                     "launch."
+        return self.__resource.push(
+            push_content="Jack's first tweet.",
+            link="https://twitter.com/jack/status/20",
+            should_open_link_in_app=False,
+            content=my_content
+        )
 
     def post_a_link_ex_2(self):
         """
         Sends a push notification with a link to Amazon.com.
         :return: the result of the call to push
         """
-        return self.__resource.push("Buy from Amazon.",
-                                    link="https://amazon.com")
+        return self.__resource.push(
+            push_content="Buy from Amazon.",
+            link="https://amazon.com"
+        )
 
     def post_a_link_ex_3(self):
         """
@@ -174,10 +189,12 @@ class Examples:
         set to False so that the App Store opens.
         :return: the result of the call to push
         """
-        return self.__resource.push("Please rate Spontit in the App Store!",
-                                    push_title="Spontit Rating Request",
-                                    link="https://itunes.apple.com/app/id1448318683?action=write-review",
-                                    should_open_link_in_app=False)
+        return self.__resource.push(
+            push_content="Please rate Spontit in the App Store!",
+            push_title="Spontit Rating Request",
+            link="https://itunes.apple.com/app/id1448318683?action=write-review",
+            should_open_link_in_app=False
+        )
 
     def post_an_ios_deep_link_ex_1(self):
         """
@@ -185,8 +202,10 @@ class Examples:
         Only works for iOS Spontit App, >= v6.0.1
         :return: the result of the call to push
         """
-        return self.__resource.push("Open the stocks app.",
-                                    ios_deep_link="stocks://")
+        return self.__resource.push(
+            push_content="Open the stocks app.",
+            ios_deep_link="stocks://"
+        )
 
     def post_an_ios_deep_link_ex_2(self):
         """
@@ -194,17 +213,21 @@ class Examples:
         Only works for iOS Spontit App, >= v6.0.1
         :return: the result of the call to push
         """
-        return self.__resource.push("Open the gallery tab of the Shortcuts app.",
-                                    ios_deep_link="shortcuts://gallery")
+        return self.__resource.push(
+            push_content="Open the gallery tab of the Shortcuts app.",
+            ios_deep_link="shortcuts://gallery"
+        )
 
     def post_an_ios_deep_link_ex_3(self):
         """
         Pushes a notification that deep links to the Spontit review creation window in the App Store.
         :return: the result of the call to push
         """
-        return self.__resource.push("Please rate Spontit in the App Store!",
-                                    push_title="Spontit Rating Request",
-                                    ios_deep_link="itms-apps://itunes.apple.com/app/id1448318683?action=write-review")
+        return self.__resource.push(
+            push_content="Please rate Spontit in the App Store!",
+            push_title="Spontit Rating Request",
+            ios_deep_link="itms-apps://itunes.apple.com/app/id1448318683?action=write-review"
+        )
 
     def create_new_channel(self):
         """
@@ -370,6 +393,7 @@ if __name__ == "__main__":
     # Get your userId at spontit.com/profile
     # Get your secretKey at spontit.com/secret_keys
     spontit_src = SpontitResource("my_user_id", "my_secret_key")
+
     example_instance = Examples(spontit_src)
 
     push_response = example_instance.simple_push_example()
